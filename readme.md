@@ -30,8 +30,9 @@
 
 ### 相关网站  
 
-记录一些认为有用的网站，方便查找访问。  
+记录一些有用的网站。  
 
 1. <https://paperswithcode.com/> 能在上面看到最新的研究论文以及分享的源代码，数据集以及排名等。  
 1. <https://pytorch.org/docs/stable/index.html> Pytorch官方文档。  
 1. <https://www.tensorflow.org/tutorials?hl=zh-cn> Tensorflow官方学习文档。  
+1. <https://latexlive.com/> Latex公式生成工具。  
