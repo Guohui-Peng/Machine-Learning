@@ -74,21 +74,24 @@ $$
 
 常用损失函数  
 
-均方差（MSE）损失函数
+均方差（MSE）损失函数  
 $$J(\vec{w}, b)=\frac{1}{2m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2$$  
 
 加入正则项  
 $$J(\vec{w}, b)=\frac{1}{2m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 \color{blue}+ \frac{\lambda}{2m}\sum_{j=1}^{n}w_j^2$$  
 
 二元交叉熵（BCE）损失函数  
+
 $$
 J(\vec{w}, b) = -\frac{1}{m} \sum_{i=1}^{m} \left [y^{(i)}\log{\left(\hat{y}^{(i)}\right)} - (1 - y^{(i)})\log{\left(1-\hat{y}^{(i)}\right)} \right ]
 $$
 
 交叉熵（CE）损失函数  
+
 $$
 J(\vec{w}, b) = -\frac{1}{m} \sum_{i=1}^{m} \sum_{c=1}^{M} \left [y_{ic}\log{\left(p_{ic}\right)} \right ]
 $$  
+
 $m$ 是样本数量， $M$ 是类别数量。
 $y_{ic}$ 真实样本类别。
 $p_{ic}$ 观测样本 $i$ 属于类别 $c$ 的预测概率  
@@ -102,7 +105,8 @@ $$\frac{\partial}{\partial{w_j}}J(\vec{w}, b) = \frac{1}{m} \sum_{i=1}^{m}(f_{\v
 $$\frac{\partial}{\partial{b}}J(\vec{w}, b) = \frac{1}{m} \sum_{i=1}^{m}(f_{\vec{w},b}(\vec{x}^{(i)} - y^{(i)})$$
 
 梯度下降  
-repeat {
+repeat {  
+
 $$
 \left\{
     \begin{array}{lcl}
@@ -110,7 +114,8 @@ $$
     \Large b = b - \alpha \frac{\partial}{\partial{b}}J(\vec{w}, b)
     \end{array}
 \right.
-$$
+$$  
+
 }  
 
 #### 批量随机梯度下降  
