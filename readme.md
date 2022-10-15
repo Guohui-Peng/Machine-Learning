@@ -28,7 +28,7 @@
 
 ## 学习笔记  
 
-[Pytorch学习笔记](./pytorch/readme.md)
+[Pytorch学习笔记](./pytorch/)
 
 ### 相关网站  
 
