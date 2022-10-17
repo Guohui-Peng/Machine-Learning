@@ -38,9 +38,7 @@ $$
 
 Softmax也是将数据转换为0~1的数据，不同的是softmax转换FC输出后的所有数据和为1。因此，一般取概率最大的值作为最终的预测输出。一般用于多分类损失。它的计算公式如下：  
 
-$$  
-\Large f(s_i) = \frac{e^{s_i}}{\textstyle \sum_{j}^{c} e^{s_j}}  
-$$  
+$$\Large f(s_i) = \frac{e^{s_i}}{\textstyle \sum_{j}^{c} e^{s_j}}$$  
 
 c为分类数量
 
@@ -48,6 +46,4 @@ c为分类数量
 
 均方差损失一般用来计算线性回归的损失，它通过计算预测值与真实值的距离的平方来衡量预估与真实之间的差距。  
 
-$$  
-\Large MSE = \left | \hat{y} - y \right |^2  
-$$  
+$$\Large MSE = \left | \hat{y} - y \right |^2$$  
