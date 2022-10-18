@@ -70,12 +70,12 @@ $$\Large CE=-\sum_{i=1}^{C=2}t_{i}log(s_i)=-t_1log(s_1)-(1-t_1)log(1-s_1)$$
 
 也可表示为：
 
-$$\Large CE = \left\{  
-    \begin{array}{rl}  
+$$\Large CE =  
+    \begin{cases}  
         -log(f(s_1)) & if \ t_1 =1 \\  
         -log(1-f(s_1)) & if \ t_1 = 0  
-    \end{array}  
-\right. $$  
+    \end{cases}  
+$$  
 
 在此 $t_1 = 1$ 意味着 $C_1$ 为正类。因此对于 $s$ 中的 $s_i$ 的梯度计算仅与其对应的二元交叉熵损失有关。  
 
@@ -83,7 +83,7 @@ $$\Large CE = \left\{
 
 $$\Large \frac{\partial}{\partial{s_1}}(CE(f(s_i))) = t_1(f(s_1)-1) + (1-t_1)f(s_1) $$  
 
-f()代表sigmoid函数。注：如果在网络的输出时未加sigmoid函数，则需在计算损失时选择带logit功能的损失函数，如pytorch中选择·BCEWithLogitsLoss·函数，而tensorflow则需在·tf.keras.losses.BinaryCrossentropy·函数的参数中设置·from_logits=true·。
+f()代表sigmoid函数。注：如果在网络的输出时未加sigmoid函数，则需在计算损失时选择带logit功能的损失函数，如pytorch中选择BCEWithLogitsLoss函数，而tensorflow则需在tf.keras.losses.BinaryCrossentropy函数的参数中设置from_logits=true。
 
 ## 均方差（MSE）损失  
 
