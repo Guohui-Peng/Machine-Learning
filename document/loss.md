@@ -85,12 +85,12 @@ $$\large \frac{\partial}{\partial{s_1}}(CE(f(s_i))) = t_1(f(s_1)-1) + (1-t_1)f(s
 
 也可表示为：
 
-$$ \large \frac{\partial}{\partial{s_1}}(CE(f(s_i))) = 
+$$ \large \frac{\partial}{\partial{s_1}}(CE(f(s_i))) =  
 \begin{cases}  
         f(s_1)-1 & if \ t_1 =1 \\  
         f(s_1) & if \ t_1 = 0  
     \end{cases}  
-$$
+$$  
 
 $f()$ 代表sigmoid函数。注：如果在网络的输出时未加sigmoid函数，则需在计算损失时选择带logit功能的损失函数，如pytorch中选择`BCEWithLogitsLoss`函数，而tensorflow则需在`tf.keras.losses.BinaryCrossentropy`函数的参数中设置`from_logits=true`。
 
