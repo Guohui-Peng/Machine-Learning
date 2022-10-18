@@ -25,7 +25,7 @@
 Sigmoid可以将数据转换为0~1之间的值。通过将FC输出的每个数据都转换为0到1之间的数据，转换后的各个值之间无必然联系。通过将转换后的数据与one-hot后的值进行比较，就可以进行多标签的分类损失计算。Sigmoid计算公式如下：
 
 $$  
-\Large f(s_i) = \frac{1}{1+e^{-s_i}}
+\large f(s_i) = \frac{1}{1+e^{-s_i}}
 $$  
 
 它的函数图形如下：
@@ -36,7 +36,7 @@ $$
 
 Softmax也是将数据转换为0~1的数据，不同的是softmax转换FC输出后的所有数据和为1。因此，一般取概率最大的值作为最终的预测输出。一般用于多分类损失。它的计算公式如下：  
 
-$$\Large f(s_i) = \frac{e^{s_i}}{\sum_{j=1}^{C}e^{s_j} }$$  
+$$\large f(s_i) = \frac{e^{s_i}}{\sum_{j=1}^{C}e^{s_j} }$$  
 
 C为分类数量
 
@@ -44,13 +44,13 @@ C为分类数量
 
 一般用于计算分类问题的损失。公式如下：  
 
-$$\Large CE=-\sum_{i=1}^{C}t_{i}log(s_i)$$  
+$$\large CE=-\sum_{i=1}^{C}t_{i}log(s_i)$$  
 
 $t_i$ 和 $s_i$ 分别为真实和预测值在C类中出现的概率。通常在计算前使用sigmoid或softmax函数将数据转换为0~1之间的数，因为one-hot后的标签正类为1，负类为0，所以可以将sigmoid或softmax函数处理过的数据近似的看为其在C类中的概率。  
 
 对于二分类问题，就是 $C=2$ 时，交叉熵损失函数可以被定义为：  
 
-$$\Large CE=-\sum_{i=1}^{C=2}t_{i}log(s_i)=-t_1log(s_1)-(1-t_1)log(1-s_1)$$  
+$$\large CE=-\sum_{i=1}^{C=2}t_{i}log(s_i)=-t_1log(s_1)-(1-t_1)log(1-s_1)$$  
 
 ### 分类交叉熵损失（Categorical Cross-Entropy loss）  
 
@@ -58,7 +58,7 @@ $$\Large CE=-\sum_{i=1}^{C=2}t_{i}log(s_i)=-t_1log(s_1)-(1-t_1)log(1-s_1)$$
 
 真实结果通常转换为one-hot标签，所以对每一个样本来说，标签只有正类 $C_p$ 是1，其它均为0。由于其它的类均为0，也就是除了 $t_i=t_p$ 外的其它 $t_i = 0$ 。公式可变化为：
 
-$$\Large CE = - log \left ( \frac{e^{s_p}}{\sum_{j=1}^{C}e^{s_j}} \right ) $$  
+$$\large CE = - log \left ( \frac{e^{s_p}}{\sum_{j=1}^{C}e^{s_j}} \right ) $$  
 
 其中 $s_p$ 为模型输出的正类的softmax后的值。  
 
@@ -66,11 +66,11 @@ $$\Large CE = - log \left ( \frac{e^{s_p}}{\sum_{j=1}^{C}e^{s_j}} \right ) $$
 
 也叫sigmoid损失。它是在sigmoid激活层上加一个交叉熵损失组成。与softmax损失不同在于，它对每个向量的分量是独立的，没有关联性。因此可以让多个网络输出的分类值都为1，从而对应多标签的多个值为1的情形。由于它每个类的元素不受其它类的影响，就如对每个类进行二分类操作，所以被称为二元交叉熵损失。
 
-$$\Large CE=-\sum_{i=1}^{C=2}t_{i}log(s_i)=-t_1log(s_1)-(1-t_1)log(1-s_1)$$  
+$$\large CE=-\sum_{i=1}^{C=2}t_{i}log(s_i)=-t_1log(s_1)-(1-t_1)log(1-s_1)$$  
 
 也可表示为：
 
-$$\Large CE =  
+$$\large CE =  
     \begin{cases}  
         -log(f(s_1)) & if \ t_1 =1 \\  
         -log(1-f(s_1)) & if \ t_1 = 0  
@@ -85,7 +85,7 @@ $$\large \frac{\partial}{\partial{s_1}}(CE(f(s_i))) = t_1(f(s_1)-1) + (1-t_1)f(s
 
 也可表示为：
 
-$$ \Large \frac{\partial}{\partial{s_1}}(CE(f(s_i))) = 
+$$ \large \frac{\partial}{\partial{s_1}}(CE(f(s_i))) = 
 \begin{cases}  
         f(s_1)-1 & if \ t_1 =1 \\  
         f(s_1) & if \ t_1 = 0  
