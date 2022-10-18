@@ -70,11 +70,11 @@ $$\Large CE=-\sum_{i=1}^{C=2}t_{i}log(s_i)=-t_1log(s_1)-(1-t_1)log(1-s_1)$$
 
 也可表示为：
 
-$$\Large CE = \left\{
-    \begin{array}{rl}
-        -log(f(s_1)) & if \ t_1 =1 \\
-        -log(1-f(s_1)) & if \ t_1 = 0
-    \end{array}
+$$\Large CE = \left\{  
+    \begin{array}{rl}  
+        -log(f(s_1)) & if \ t_1 =1 \\  
+        -log(1-f(s_1)) & if \ t_1 = 0  
+    \end{array}  
 \right. $$  
 
 在此 $t_1 = 1$ 意味着 $C_1$ 为正类。因此对于 $s$ 中的 $s_i$ 的梯度计算仅与其对应的二元交叉熵损失有关。  
