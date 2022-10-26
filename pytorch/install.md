@@ -13,7 +13,7 @@
 Windows 11下打开“终端”，如未安装可以在微软商店中免费安装。然后运行下面的命令就可以创建需要的pytorch docker。
 
 ```linux
-docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --name docker-name -v E:\git-home\wsl\xxx:/workspace pytorch/pytorch:1.12.1-cuda11.3-cudnn8-devel
+docker run --gpus all -it --name docker-name -v E:\git-home\wsl\xxx:/workspace pytorch/pytorch:1.12.1-cuda11.3-cudnn8-devel
 ```  
 
 Docker hub可查询其它版本：<https://hub.docker.com/r/pytorch/pytorch/tags>  
