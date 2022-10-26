@@ -24,7 +24,7 @@ Docker hub可查询其它版本：<https://hub.docker.com/r/pytorch/pytorch/tags
 
 VS Code可以通过远程资源连接功能，连接WSL以及下面的docker。连接后可以在docker镜像上进行编程，建议将工作目录映射到主机目录，并设置GIT或其它版本控制软件进行代码同步。Docker的镜像更新需删除原来的镜像重新创建，不做好备份可能丢失数据！！！  
 
-### 4.1 安装ipykernel  
+### 4.1 安装Jupyter支持  
 
 用VSCode打开Jupyter Notebook时，提示未安装ipykernel，并显示了下面的建议安装脚本。  
 
@@ -36,4 +36,9 @@ Command: 'conda install -n base ipykernel --update-deps --force-reinstall'
 
 避坑！用这个建议脚本安装的Jupyter在使用print命令时，flush参数不识别`\r`命令。
 
-建议使用pip命令安装。`pip install ipykernel`  
+建议使用pip命令安装。
+
+```command  
+pip install ipykernel
+pip install ipywidgets
+```  
